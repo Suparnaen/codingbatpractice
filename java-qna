@@ -1,0 +1,434 @@
+Java 8 features:
+Some of the important Java 8 features are;
+
+    forEach() method in Iterable interface
+    default and static methods in Interfaces
+    Functional Interfaces and Lambda Expressions
+    Java Stream API for Bulk Data Operations on Collections
+    Java Time API
+    Collection API improvements
+    Concurrency API improvements
+    Java IO improvements
+	
+	REferences: https://www.journaldev.com/2389/java-8-features-with-examples
+	
+What are functional Interface?
+https://jenkov.com/tutorials/java-functional-programming/functional-interfaces.html
+The term Java functional interface was introduced in Java 8. A functional interface in Java is an interface that contains only a single abstract (unimplemented) method. 
+A functional interface can contain default and static methods which do have an implementation, in addition to the single unimplemented method. 	
+	
+What are the OOPS Concepts in Java?
+https://www.guru99.com/java-oops-concept.html
+Object-Oriented Programming System (OOPs) is a programming concept that works on the principles of abstraction, encapsulation, inheritance, and polymorphism. 
+ The basic concept of OOPs is to create objects, re-use them throughout the program, and manipulate these objects to get results.
+List of OOPs Concepts in Java with Examples:
+Classess
+Object
+Inheritance
+Polymorphism---If the same method signature will be implemented in differnt classess, then it will result in lot of duplicate code:
+This can be handled by defining a abstract class which will hold the class behaviours and also implemented repeated methods
+Other classes implementing the abstract class will need to implement the method signature of the class.
+
+
+Abstraction:
+https://www.geeksforgeeks.org/abstraction-in-java-2/?ref=lbp
+
+Data Abstraction is the property by virtue of which only the essential details are displayed to the user. The trivial or the non-essentials units are not displayed to the user. Ex: Man driving a car will only know about driving and not bother about the internal details of making the car.
+
+
+Encapsulation:
+Its a way to hide the member variables and constructor so that other classess cannot use it.They will use with help of getters and setters.
+
+Association:
+https://www.edureka.co/blog/association-in-java/
+Two Forms of Association:
+Composition and Aggregation are the two special forms of association
+8) Aggregation
+Composition.
+
+https://www.geeksforgeeks.org/abstraction-in-java-2/?ref=lbp
+Encapsulation vs Data Abstraction
+*******************************
+    Encapsulation is data hiding(information hiding) while Abstraction is detailed hiding(implementation hiding).
+    While encapsulation groups together data and methods that act upon the data, data abstraction deal with exposing the interface to the user and hiding the details of implementation.
+	
+	
+When to use abstract classes and abstract methods with an example
+**********************************
+There are situations in which we will want to define a superclass that declares the structure of a given abstraction without providing a complete implementation of every method. That is, sometimes we will want to create a superclass that only defines a generalization form that will be shared by all of its subclasses, leaving it to each subclass to fill in the details.
+ 
+ Exceptions:
+ **************
+ An exception is an unwanted or unexpected event, which occurs during the execution of a program i.e at run time, that disrupts the normal flow of the program’s instructions. In Java, there are two types of exceptions:
+
+    Checked exceptions --Compile time exceptions
+    Unchecked exceptions--Run time exceptions
+ 
+ Checked and UnChecked Exceptions in Java:
+ https://howtodoinjava.com/java/exception-handling/checked-vs-unchecked-exceptions-in-java/
+ 
+ Checked exceptions are checked by the Java compiler so they are called compile time exceptions.
+ ****************************
+ Note that all checked exceptions are subclasses of Exception class. For example,
+
+    ClassNotFoundException
+    IOException
+    SQLException
+	
+	UnChecked Exceptions:
+	***********************
+	Unchecked exceptions are not checked by the compiler. These are called runtime exceptions.
+	nchecked Exceptions are subclasses of RuntimeException class.
+
+    ArithmeticException
+	NullPointerException
+    ArrayStoreException
+    ClassCastException
+ 
+ What are exceptions in Java?
+ https://www.geeksforgeeks.org/exceptions-in-java/?ref=leftbar-rightbar
+ 
+ 
+ What is serialization and deserialization in Java:
+ ***************************************************
+ https://www.geeksforgeeks.org/serialization-in-java/
+ 
+ Serialization is a mechanism of converting the state of an object into a byte stream,because the byte stream is platform-independent. 
+ Deserialization is the reverse process where the byte stream is used to recreate the actual Java object in memory. This mechanism is used to persist the object.
+ 
+ Advantages of Serialization
+1. To save/persist state of an object.
+2. To travel an object across a network.
+
+Example:
+package com.techvidvan.serialization;
+import java.io.Serializable;  
+public class Teacher implements Serializable
+{  
+int id;  
+   String name;  
+   public Teacher(int id, String name)
+{  
+      this.id = id;  
+      this.name = name;  
+}  
+}  
+
+
+Difference between Abstract Class and Interface in Java:
+********************************************************
+https://www.geeksforgeeks.org/difference-between-abstract-class-and-interface-in-java/
+
+Both abstract class and interface are used for abstraction, to hiding the internal implementation of the feature and only showing the functionality to the users.
+
+Type of methods: 
+*****************
+Interface can have only abstract methods. An abstract class can have abstract and non-abstract methods. From Java 8, it can have default and static methods also.
+Final Variables: 
+Variables declared in a Java interface are by default final. An abstract class may contain non-final variables.
+Multiple implementations: 
+An interface can extend another Java interface only, an abstract class can extend another Java class and implement multiple Java interfaces.
+
+
+Difference between Overloading and Overriding:
+https://www.geeksforgeeks.org/difference-between-method-overloading-and-method-overriding-in-java/
+
+Overloading in Java:
+********************
+https://www.geeksforgeeks.org/overloading-in-java/?ref=lbp
+Overloading allows different methods to have the same name, but different signatures where the signature can differ by the number of input parameters or 
+type of input parameters or both. 
+Overloading is related to compile-time (or static) polymorphism.
+
+Overriding in Java:
+https://www.geeksforgeeks.org/overriding-in-java/?ref=lbp
+Overriding is a feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its super-classes or parent classes. When a method in a subclass has the same name, same parameters or signature, and same return type(or sub-type) as a method in its super-class, then the method in the subclass is said to override the method in the super-class.
+
+Method overriding is one of the way by which java achieve Run Time Polymorphism.
+
+Super Keyword in Java:
+************************
+The super keyword in java is a reference variable that is used to refer parent class objects.
+
+https://www.geeksforgeeks.org/final-keyword-in-java/?ref=lbp
+final Keyword in Java
+*************************
+final keyword is a non-access modifier applicable and is used in following context:
+
+Final Variable ----> To create constant variable.
+Final Method----> Prevent method overloading
+
+Final classess ---> Prevents Inheritance
+
+
+Can final method be overriden?
+No 
+
+Can static method be overriden? No
+Static methods can not be overridden, since they are resolved using static binding by the compiler at compile time
+
+However, static method can be overloaded, but can not be overridden in Java. If you declare,  another static method with same signature in derived class than the static method of superclass will be hidden, and any call to that static method in subclass will go to static method declared in that class itself. This is known as method hiding in Java.
+
+Read more: https://javarevisited.blogspot.com/2013/03/can-we-overload-and-override-static-method-java.html#ixzz7UQeRTX00
+
+
+Can static method be called by creating an object?
+can be called without creating an object of class. They are referenced by the class name itself 
+
+
+Can static method call a non-static method?
+A static method can call only other static methods; it cannot call a non-static method
+
+
+When is synchronize keyword used in Java?
+https://techvidvan.com/tutorials/synchronized-in-java/
+
+As Java is a multi-threaded language, it supports a very important concept of Synchronization.
+
+The process of allowing only a single thread to access the shared data or resource at a particular point of time is known as Synchronization
+
+Example - File write operation.
+
+
+https://www.geeksforgeeks.org/g-fact-24-finalfinally-and-finalize-in-java/
+Difference between final, finally and finalize?
+
+final - is a reserved keyword in Java.We can use this keyword with method, variables and classes. It has different meaning depending upon where it is used.
+Final Variable ----> To create constant variable.
+Final Method----> Prevent method overloading
+
+Final classess ---> Prevents Inheritance.
+If a class is declared as final then by default all of the methods present in that class are automatically final but variables are not.
+
+finally - This is also a reserved keyword in Java. It is used in association with try/catch block. It guarantees that specific section of code will 
+definately be executed once try/catch execution is over and even if an exception is thrown.
+The finally block will be executed after the try and catch blocks, but before control transfers back to its origin.
+
+finalize---It is a method that the Garbage Collector always calls just before the deletion/destroying the object which is eligible for Garbage Collection, so as to perform clean-up activity. Clean-up activity means closing the resources associated with that object like Database Connection, Network Connection or we can say resource de-allocation. Remember it is not a reserved keyword.
+Once the finalize method completes immediately Garbage Collector destroy that object. finalize method is present in Object class and its syntax is:
+
+protected void finalize throws Throwable{}
+
+
+Difference between throw and throws?
+****************************************
+https://www.geeksforgeeks.org/difference-between-throw-and-throws-in-java/?ref=gcse
+
+Throw-->The throw keyword is used inside a function. It is used when it is required to throw an Exception logically.
+public class GFG {
+    public static void main(String[] args)
+    {
+        // Use of unchecked Exception
+        try {
+            // double x=3/0;
+            throw new ArithmeticException();
+        }
+        catch (ArithmeticException e) {
+            e.printStackTrace();
+        }
+    }
+}
+The throws keyword is used in the function signature. It is used when the function has some statements that can lead to exceptions.
+// Java program to demonstrate the working
+// of throws keyword in exception handling
+import java.io.*;
+import java.util.*;
+  
+public class GFG {
+  
+    public static void writeToFile() throws Exception
+    {
+        BufferedWriter bw = new BufferedWriter(
+            new FileWriter("myFile.txt"));
+        bw.write("Test");
+        bw.close();
+    }
+  
+    public static void main(String[] args) throws Exception
+    {
+        try {
+            writeToFile();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+When to use default method in interface?
+https://www.educative.io/courses/java-8-lambdas-stream-api-beyond/R888OpmM5WO
+
+Before Java 8, we could only declare abstract methods in an interface. However, Java 8 introduced the concept of default methods. Default methods are methods that can have a body. The most important use of default methods in interfaces is to provide additional functionality to a given type without breaking down the implementing classes.
+
+Before Java 8, if a new method was introduced in an interface then all the implementing classes used to break. We would need to provide the implementation of that method in all the implementing classes.
+
+However, sometimes methods have only single implementation and there is no need to provide their implementation in each class. In that case, we can declare that method as a default in the interface and provide its implementation in the interface itself
+
+
+Why is String immutable?
+https://www.geeksforgeeks.org/java-string-is-immutable-what-exactly-is-the-meaning/
+The value of string s is not changed because strings are immutable but new object will be created with string s value as "ABCDEFGH". If we assign the s value of s to a variable then the value of an is displayed in the output.
+EX:
+String s new String("ABCD");
+System.out.println("the value of s before concat is"+s);
+s=s.concat("EFGH");
+System.out.println("the value of s after concat is"+s);
+Output:
+the value of s before concat is ABCD
+the value of s after concat is ABCDEFGH
+Here new object is created with s value as ABCDEFGH.
+Since strings are immutable the value cannot change but new object will be created with changed values.
+
+Reason for String immutability:
+--The String pool cannot be possible if String is not immutable in Java. A lot of heap space is saved by JRE. The same string variable can be referred to by more than one string variable in the pool
+--If we don’t make the String immutable, it will pose a serious security threat to the application. For example, database usernames, passwords are passed as strings to receive database connections. The socket programming host and port descriptions are also passed as strings. The String is immutable, so its value cannot be changed. If the String doesn’t remain immutable, any hacker can cause a security issue in the application by changing the reference value.
+--The String is safe for multithreading because of its immutableness.
+
+
+How to create immutable class in Java?
+https://www.geeksforgeeks.org/create-immutable-class-java/?ref=lbp
+Immutable class in java means that once an object is created, we cannot change its content. In Java, all the wrapper classes (like Integer, Boolean, Byte, Short) 
+and String class is immutable. We can create our own immutable class as well. 
+Requirement to create immutable class:
+    The class must be declared as final so that child classes can’t be created.
+    Data members in the class must be declared "private" so that direct access is not allowed.
+    Data members in the class must be declared as "final" so that we can’t change the value of it after object creation.
+    A parameterized constructor should initialize all the fields performing a deep copy so that data members can’t be modified with an object reference.
+    Deep Copy of objects should be performed in the getter methods to return a copy rather than returning the actual object reference)
+
+
+Explain the collection framework?
+
+
+What are different types of collections and explain each?
+
+Difference between String, StringBuffer and StringBuilder?
+***********************
+Strings in Java are objects used to represent a sequence of character. They can be either created using the String Literal or by using the NEW keyword
+
+StringBuffer and StringBuilder are classes used for String manipulation. These are mutable objects, which provide methods such as substring(), insert(), append(), delete() for String manipulation.
+
+The differences between String, StringBuffer, and StringBuilder are based on the following two parameters:
+
+    Mutability
+    Performance
+https://www.edureka.co/blog/string-vs-stringbuffer-vs-stringbuilder/	
+
+String is "immutable" while stringBuilder and StringBuffer are mutable.StringBuilder is faster than StringBuffer as it offers no synchronization.
+
+
+Difference between Comparator and Comparable?
+https://www.geeksforgeeks.org/comparable-vs-comparator-in-java/
+
+https://www.javatpoint.com/difference-between-comparable-and-comparator
+
+Comparable --->provides a single sorting sequence. In other words, we can sort the collection on the basis of a single element such as id, name, and price.
+
+The Comparator ---> provides multiple sorting sequences. In other words, we can sort the collection on the basis of multiple elements such as id, name, and price etc.
+
+Comparable provides compareTo() method to sort elements.Comparator provides compare() method to sort elements.
+
+write a sample program using example from geeks for geeks:
+
+
+Difference between HashMap and HashSet?
+https://www.tutorialspoint.com/difference-between-hashmap-and-hashset-in-java
+https://www.geeksforgeeks.org/difference-between-hashmap-and-hashset/
+
+https://www.javatpoint.com/difference-between-hashset-and-hashmap
+
+HashMap implements Map Interface, Does not allows duplicate keys, duplicate values are allowed
+HashSet implements Set Interface. does not allows duplicate values.
+
+In Hashmap , elements are stored as Key value pair, In HashSet elements are stored as Objects.
+Performance: Hashmap is comparatively faster than HashSet because of hashing technique used here.
+Insertion mechanisim: In hasmap we use "Put()" while in HashSet we use "Add()"
+
+What is diamond problem in Java? How to resolve it?
+https://www.javatpoint.com/what-is-diamond-problem-in-java
+
+Diamond problem is related to multiple inheritance. Thats why classess cannot extend multiple super classes.
+In order to take care of this problem, default method is introduced which can be defined inside Interface. And base class can implement multple interfaces
+without need to override the method definition.
+
+
+When to use List, Set and Map?
+
+Can you call multiple constructor within a constructor?//constructor chaining:
+https://www.geeksforgeeks.org/constructor-chaining-java-examples/
+Yes:
+Constructor chaining occurs through inheritance.
+Why do we need constructor chaining ? 
+This process is used when we want to perform multiple tasks in a single constructor rather than creating a code for each task in a single constructor we create a separate constructor for each task and make their chain which makes the program more readable.
+
+Rules of constructor chaining : 
+
+    The this() expression should always be the first line of the constructor.
+    There should be at-least be one constructor without the this() keyword (constructor 3 in above example).
+    Constructor chaining can be achieved in any order.
+	
+What happens if we change the order of constructors?
+Nothing, Constructor chaining can be achieved in any order
+
+
+EXplain public static void main(String args[])
+
+
+can there be multiple main methods? or can you overload main method?
+https://www.javatpoint.com/can-we-overload-main-method-in-java
+
+When we talk about the method overloading in Java, a question arises that can we overload main() method in Java. The answer is, yes, we can overload main() method in Java.
+
+Method overloading in Java is a feature that allows a class to have more than one method with the same name. To identify each method uniquely, we differentiate each method by types of arguments or the number of arguments or order of arguments.
+
+The main() method is the starting point of any Java program. The JVM starts the execution of any Java program form the main() method. Without the main() method, JVM will not execute the program.
+
+It is a default signature that is predefined in the JVM. It is called by JVM to execute a program line by line and ends the execution after completion of the method. Here a question arises that like the other methods in Java, can we also overload the main() method.
+
+The answer is, yes, we can overload the main() method. But remember that the JVM always calls the original main() method. It does not call the overloaded main() method.
+
+What is Singleton class?
+*************************
+https://techvidvan.com/tutorials/java-singleton-class/
+https://www.geeksforgeeks.org/singleton-design-pattern/?ref=gcse (better explanations)
+A Singleton class in Java allows only one instance to be created and provides global access to all other classes through this single object or instance.
+
+Sometimes we need to have only one instance of our class for example a single DB connection shared by multiple objects as creating a separate DB connection for every object may be costly. Similarly, there can be a single configuration manager or error manager in an application that handles all problems instead of creating multiple managers.
+Definition: 
+The singleton pattern is a design pattern that restricts the instantiation of a class to one object. 
+
+
+How to design a singleton class?
+***************************
+To design a singleton class, we need to do the following things:
+
+    Firstly, declare the constructor of the Singleton class with the private keyword. We declare it as private so that no other classes can instantiate or make objects from it.
+    A private static variable of the same class that is the only instance of the class.
+    Declare a static factory method with the return type as an object of this singleton class.
+	
+	
+Difference between Normal class and Singleton class
+*********************************
+We can distinguish a Singleton class from the usual classes with respect to the process of instantiating the object of the class. To instantiate a normal class, we use a java constructor. On the other hand, to instantiate a singleton class, we use the getInstance() method.
+
+// Classical Java implementation of singleton
+// design pattern
+class Singleton
+{
+    private static Singleton obj;
+ 
+    // private constructor to force use of
+    // getInstance() to create Singleton object
+    private Singleton() {}
+ 
+    public static Singleton getInstance()
+    {
+        if (obj==null)
+            obj = new Singleton();
+        return obj;
+    }
+}
+
+Printing different pattern in Java:
+https://www.geeksforgeeks.org/programs-printing-pyramid-patterns-java/?ref=gcse
+
